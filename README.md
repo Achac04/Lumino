@@ -49,26 +49,6 @@ npm run lint      # ESLint (flat config; no deprecated `next lint`)
 npm run typecheck # TypeScript only
 ```
 
-## Deploy on Netlify
-
-1. Push this repository to GitHub and import it in [Netlify](https://www.netlify.com/).
-2. Set **Environment variable** (Production + Preview):
-
-   | Name | Example |
-   |------|---------|
-   | `NEXT_PUBLIC_SITE_URL` | `https://your-project.netlify.app` |
-
-   No trailing slash. This powers `metadataBase`, Open Graph URLs, `sitemap.xml`, and `robots.txt`.
-
-3. Build settings:
-   - Build command: `npm run build`
-   - Publish directory: `.next`
-4. Redeploy so OG tags pick up the correct origin.
-
-## Personalize (required before job search)
-
-Edit **`config/portfolio.ts`**: display name, role, tagline, email `mailto:`, GitHub, LinkedIn, and optional personal site URL.
-
 ## Evidence you can cite
 
 - **Case study** (`/case-study`): IA, visual system, wireframe → hi-fi narrative, engineering table, accessibility checklist, performance methodology, honest out-of-scope notes.
@@ -88,12 +68,6 @@ After `npm run build && npm start`, run **Lighthouse** (Chrome DevTools → Ligh
 | `config/portfolio.ts` | **Your** name, links, tagline |
 | `lib/products.ts` | Demo catalog data |
 | `lib/site-url.ts` | Canonical URL for metadata |
-
-## Troubleshooting (dev)
-
-- **`Port 3000 is in use`** — another app is bound to 3000; Next picks the next free port (e.g. 3001). Stop the other process or run `npx next dev -p 3002`.
-- **`SegmentViewNode` / React Client Manifest** — `next.config.ts` sets `experimental.devtoolSegmentExplorer: false` to avoid a known Next 15.5 devtools issue. If errors persist, delete `.next` and restart `npm run dev`.
-- **Unsplash `upstream image response failed` 404** — remote photo IDs can break over time; URLs in `lib/products.ts` are checked periodically. Thumbnails use `SafeImage` so a broken URL degrades to a placeholder instead of crashing the page.
 
 ## License
 
