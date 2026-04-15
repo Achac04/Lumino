@@ -2,11 +2,37 @@
 
 High-fidelity **Next.js 15** prototype for a fictional boutique lighting brand: landing, filterable catalog, slide-out cart, multi-step checkout, restoration inquiry, and a **written case study** for recruiters.
 
+## Live demo
+
+- **Deployed on Netlify**
+- **Production URL:** `https://lumino-webpage.netlify.app/`
+
+## Why this project stands out
+
+- Combines **product design thinking** and **frontend engineering** in one polished, deployable artifact.
+- Demonstrates a complete user journey: discovery (`/`) → exploration (`/catalog`) → intent (`cart sheet`) → conversion (`/checkout`) → service support (`/restoration`).
+- Includes a recruiter-friendly **case study** route (`/case-study`) documenting decisions, tradeoffs, accessibility, and quality methodology.
+
 ## Stack
 
 - **Next.js** (App Router) · **TypeScript** · **Tailwind CSS**
 - **Radix UI** (Dialog-based cart sheet) · **Lucide** icons
 - **`next/font`** (Cormorant Garamond + DM Sans) · **`next/image`** with graceful fallbacks
+
+## Core experience
+
+- **Landing page:** editorial hero, services overview, and featured desk/nightstand collection.
+- **Catalog:** filterable grid across pendant, grand/floor, and petite categories with illuminated hover treatment.
+- **Cart:** slide-out minimalist sheet with thumbnails, quantity controls, and restoration insurance add-on.
+- **Checkout:** single-column multi-step flow with progress states and sticky order summary.
+- **Restoration inquiry:** detailed contact form for lamp age/origin, issue description, and photo uploads.
+
+## Design direction
+
+- **Aesthetic:** Antique Minimalism — historical warmth with generous white space.
+- **Palette:** parchment surfaces, charcoal typography, and brass accents.
+- **Typography:** high-contrast serif for hierarchy + airy sans-serif for readability.
+- **Imagery:** texture-forward lighting compositions (silk, weathered bronze, blown glass).
 
 ## Quick start
 
@@ -23,18 +49,21 @@ npm run lint      # ESLint (flat config; no deprecated `next lint`)
 npm run typecheck # TypeScript only
 ```
 
-## Deploy on Vercel
+## Deploy on Netlify
 
-1. Push this repository to GitHub and import it in [Vercel](https://vercel.com).
+1. Push this repository to GitHub and import it in [Netlify](https://www.netlify.com/).
 2. Set **Environment variable** (Production + Preview):
 
    | Name | Example |
    |------|---------|
-   | `NEXT_PUBLIC_SITE_URL` | `https://your-project.vercel.app` |
+   | `NEXT_PUBLIC_SITE_URL` | `https://your-project.netlify.app` |
 
    No trailing slash. This powers `metadataBase`, Open Graph URLs, `sitemap.xml`, and `robots.txt`.
 
-3. Redeploy so OG tags pick up the correct origin.
+3. Build settings:
+   - Build command: `npm run build`
+   - Publish directory: `.next`
+4. Redeploy so OG tags pick up the correct origin.
 
 ## Personalize (required before job search)
 
